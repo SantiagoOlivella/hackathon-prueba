@@ -6,6 +6,11 @@ export const Nav = () => {
 
     const { login, setLogin } = useUser();
 
+    const salir=()=>{
+        setLogin(false);
+        localStorage.setItem('login', false);
+    }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -25,7 +30,7 @@ export const Nav = () => {
                                     <NavLink className="nav-link" aria-current="page" to="/recetas" activeClassName="active" >Recetas</NavLink >
                                 </li>
                                 <li className="nav-item">
-                                    <button className="btn btn-warning nav-link " to="/" exact>Salir</button >
+                                    <button className="btn btn-warning nav-link " to="/" exact onClick={()=>salir()} >Salir</button >
                                 </li>
                             </ul>
                             :
@@ -35,7 +40,6 @@ export const Nav = () => {
                                 </li>
                             </ul>
                     }
-
                 </div>
             </div>
         </nav>

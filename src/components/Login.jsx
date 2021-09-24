@@ -5,16 +5,18 @@ import { useUser } from '../context/UserContext';
 export const Login = () => {
     
     const history=useHistory();
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('admin@admin.com');
     const [passWord, setPassWord] = useState('');
     const {setLogin}=useUser();
 
     const loginUser= (e)=>{
         e.preventDefault();
         if(email==="admin@admin.com" && passWord==="123"){
-            setLogin(true)
+            localStorage.setItem('login', true);
+            setLogin(true);
             history.push('/home');
         }else{
+            localStorage.setItem('login', false);
             setLogin(false)
             alert('Contraseña Errada')
         }
@@ -29,7 +31,7 @@ export const Login = () => {
                         <div className="card-body">
                             <form onSubmit={loginUser} >
                                 <div className="mb-3">
-                                    <input type="email" placeholder="Usuario" autoFocus className="form-control" onChange={e => setEmail(e.target.value)} />
+                                    <input type="email" placeholder="Usuario" value={email} autoFocus className="form-control" onChange={e => setEmail(e.target.value)} />
                                 </div>
                                 <div className="mb-3">
                                     <input type="password" placeholder="Contraseña" className="form-control" onChange={e => setPassWord(e.target.value)} />
