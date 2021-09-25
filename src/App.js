@@ -22,7 +22,7 @@ function App() {
     return validar() ? <Route {...props} /> : <Redirect to='/' />;
   };
   const Public = (props) => {
-    return validar() ? <Redirect to='/home'/> : <Route {...props} />;
+    return validar() ? <Redirect to='/'/> : <Route {...props} />;
   };
 
   return (
