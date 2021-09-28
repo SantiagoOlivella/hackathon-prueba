@@ -12,11 +12,11 @@ export const Login = () => {
     const loginUser= (e)=>{
         e.preventDefault();
         if(email==="admin@admin.com" && passWord==="123"){
-            localStorage.setItem('login', true);
+            localStorage.setItem('login', JSON.stringify(true));
             setLogin(true);
             history.push('/home');
         }else{
-            localStorage.setItem('login', false);
+            localStorage.setItem('login', JSON.stringify(false));
             setLogin(false)
             alert('Contraseña Errada')
         }

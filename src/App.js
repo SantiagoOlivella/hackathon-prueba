@@ -1,38 +1,24 @@
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router,Route,Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Nav } from "./components/Nav";
+import { Receta } from "./components/Receta";
 import { Recetas } from "./components/Recetas";
-import { useUser } from "./context/UserContext";
+import { PrivateRoute } from "./routes/PrivateRoute";
+import { PublicRoute } from "./routes/PublicRoute";
 
 
 function App() {
-
-  const { login } = useUser();
-
-  const validar = () => {
-    if (login) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  const Private = (props) => {
-    return validar() ? <Route {...props} /> : <Redirect to='/' />;
-  };
-  const Public = (props) => {
-    return validar() ? <Redirect to='/'/> : <Route {...props} />;
-  };
-
+  
   return (
 
     <Router>
       <Nav />
       <Switch>
-        <Private path="/recetas" component={Recetas} />
-        <Public path="/" exact component={Login} />
-        <Private path="/home" component={Home} />
+        <PrivateRoute path="/recetas" exact component={Recetas} />
+        <PublicRoute path="/" exact component={Login} />
+        <PrivateRoute path="/home" exact component={Home} />
+        <Route path="/description/:id" component={Receta}/>
       </Switch>
     </Router>
 
