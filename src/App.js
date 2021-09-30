@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Nav } from "./components/Nav";
@@ -18,7 +18,7 @@ function App() {
         <PrivateRoute path="/recetas" exact component={Recetas} />
         <PublicRoute path="/" exact component={Login} />
         <PrivateRoute exact path="/home" component={Home} />
-        <Route exact path="/description/:id" component={Receta} />
+        <PrivateRoute exact path="/description/:id" component={Receta} />
       </Switch>
     </Router>
 
