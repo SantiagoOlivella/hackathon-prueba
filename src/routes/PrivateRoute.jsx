@@ -5,7 +5,7 @@ import { ValidarLogin } from '../components/ValidarLogin';
 
 export const PrivateRoute = ({ component: Component, ...rest }) => {
 
-       return (
+    return (
         <Route {...rest} >
 
             {ValidarLogin() ? <Component /> : <Redirect to="/" />}

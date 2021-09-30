@@ -30,7 +30,7 @@ export const Nav = () => {
                                     <NavLink className="nav-link" aria-current="page" to="/recetas" activeClassName="active" >Recetas</NavLink >
                                 </li>
                                 <li className="nav-item">
-                                    <button className="btn btn-warning nav-link " to="/" exact onClick={()=>salir()} >Salir</button >
+                                    <button className="btn btn-warning nav-link " onClick={()=>salir()} >Salir</button >
                                 </li>
                             </ul>
                             :

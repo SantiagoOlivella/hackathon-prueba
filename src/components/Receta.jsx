@@ -11,25 +11,27 @@ export const Receta = () => {
     const { id } = useParams();
     const [description, setDescription] = useState(initialRecetas)
 
-
-
-    useEffect(()=>{
+    useEffect(() => {
         const search = async () => {
             const { data } = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-            setDescription(data);
-            console.log(description)
-            console.log(data.meals)
+            setDescription(data.meals);
         }
         search();
-    },[id])
+    }, [id])
 
     return (
         <div className="card" >
             <div className="row">
-                <div className="col-md-4">
-                    <img src={description.strMealThumb} alt="imgReceta" />
-                    <h1>{description.idMeal}</h1>
-                </div>
+                {description !== null ?
+                    description.map((item, i) => (
+                        <div className="col-md-4" key={i}>
+                            <img src={item.strMealThumb} alt="imgReceta" />
+                            <h1>{item.idMeal}</h1>
+                        </div>
+                    )):
+                    <h1>Acá van recetas manuales</h1>
+                }
+
             </div>
 
         </div>
