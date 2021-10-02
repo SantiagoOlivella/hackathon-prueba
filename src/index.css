@@ -5,3 +5,7 @@
     transform: scale(1.04);
     transition: 0.3s;
 }
+
+body{
+    background-color: rgb(255, 222, 255) !important;  
+}
