@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
+import { LoginPage } from '../pages/LoginPage';
 
 export const Login = () => {
     
@@ -25,9 +26,10 @@ export const Login = () => {
 
     return (
         <div className="container mt-5">
+            <LoginPage/>
             <div className="d-flex justify-content-center">
-                <div className="col-12 col-lg-8">
-                    <div className="card">
+                <div className="col-12 col-lg-4 m-3">
+                    <div className="card" id="cardLogin">
                         <div className="card-body">
                             <form onSubmit={loginUser} >
                                 <div className="mb-3">

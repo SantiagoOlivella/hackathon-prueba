@@ -9,3 +9,24 @@
 body{
     background-color: rgb(255, 222, 255) !important;  
 }
+
+#accordionHome{
+    color: rgb(4, 0, 255);
+}
+
+#collapsableHome{
+    background-color: gray;
+}
+
+#collapsableHomeDetalle{
+    background-color: rgb(255, 222, 255) ;
+}
+
+#slogan1{
+    background-color: rgb(79, 168, 28);
+    color: white;
+}
+
+#cardLogin{
+    background-color: black;
+}
