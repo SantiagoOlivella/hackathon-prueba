@@ -1,6 +1,8 @@
 
 export const Header = () => {
     return (
+
+        // Inicia creación de carousel/banner principal
         <div className="jumbotron jumbotron-fluid">
             <div id="carouselHeader" className="carousel slide" data-bs-ride="carousel" >
                 <div className="carousel-indicators">
@@ -33,5 +35,6 @@ export const Header = () => {
                 </button>
             </div>
         </div>
+        // Finaliza creación de  carousel/banner
     )
 }

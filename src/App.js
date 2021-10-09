@@ -12,6 +12,7 @@ function App() {
 
   return (
 
+    // Creo las urtas publicas y privadas con su respectivos componentes
     <Router>
       <Nav />
       <Switch>

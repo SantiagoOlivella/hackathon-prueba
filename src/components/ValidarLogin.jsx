@@ -3,8 +3,9 @@ import { useUser } from '../context/UserContext';
 
 export const ValidarLogin = () => {
 
-    const { login } = useUser();
+    // Me traigo la constante login del estado Global y la valido para que me retorne el booleano
 
+    const { login } = useUser();
 
     if (login) {
         return true;

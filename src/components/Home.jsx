@@ -4,7 +4,9 @@ import { Header } from './Header'
 export const Home = () => {
     return (
         <div>
+        {/* Importamos el Header */}
             <Header />
+            {/* Inicia creación del accordion donde vamos a mostrar la información principal */}
             <div className="container" id="collapsableHome">
                 <div className="accordion m-5" id="accordionHome">
                     <div className="accordion-item" id="collapsableHomeDetalle">
@@ -52,5 +54,6 @@ export const Home = () => {
                 </div>
             </div>
         </div>
+        // Finaliza cración del accordion
     )
 }

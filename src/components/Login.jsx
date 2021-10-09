@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { useUser } from '../context/UserContext';
 import { LoginPage } from '../pages/LoginPage';
 
@@ -10,6 +11,7 @@ export const Login = () => {
     const [passWord, setPassWord] = useState('');
     const {setLogin}=useUser();
 
+    // inicia creación de funcion para el login y cuando nos loguemos guardamos el logueo en el localStorage
     const loginUser= (e)=>{
         e.preventDefault();
         if(email==="admin@admin.com" && passWord==="123"){
@@ -19,14 +21,21 @@ export const Login = () => {
         }else{
             localStorage.setItem('login', JSON.stringify(false));
             setLogin(false)
-            alert('Contraseña Errada')
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Contraseña errada!',
+                footer: 'Si no tienes la contraseña comunicate con el administrador'
+              })
         }
     }
-
+    // Finaliza creación de función login
 
     return (
         <div className="container mt-5">
+            {/* Importamos la página de logueo */}
             <LoginPage/>
+            {/* Creamos el formulario para el logueo */}
             <div className="d-flex justify-content-center">
                 <div className="col-12 col-lg-4 m-3">
                     <div className="card" id="cardLogin">
@@ -45,5 +54,6 @@ export const Login = () => {
                 </div>
             </div>
         </div>
+        // Finaliza creación del formulario
     )
 }

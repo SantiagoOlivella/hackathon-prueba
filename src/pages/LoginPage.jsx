@@ -3,6 +3,8 @@ import React from 'react'
 
 export const LoginPage = () => {
     return (
+
+        // Creamos page de Longin
         <div className="container" id="slogan1">
             <div className="row">
                 <div className="col p-5 mt-4">

@@ -4,6 +4,7 @@ import { useUser } from '../context/UserContext';
 
 export const Nav = () => {
 
+    // Estoy importando esta función desde el estado global UserContext
     const { login, setLogin } = useUser();
 
     const salir=()=>{
@@ -12,6 +13,7 @@ export const Nav = () => {
     }
 
     return (
+        // Inicia creación de la Nav
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div className="container">
                 <NavLink className="navbar-brand" to="/home"><i className="fas fa-utensils"></i> Recetas.com <i className="fas fa-hamburger"></i></NavLink>
@@ -19,8 +21,10 @@ export const Nav = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    {/* Verificamos con la función loguin si el usuario esta logueado para saber que pestañas mostrar en la Nav, tener en cuenta que el login lo estamos trayendo del estado global useUser */}
 
-                    {
+                    { 
+                    //  Si esta logueado me muestra esta información 
                         login ?
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
@@ -34,6 +38,7 @@ export const Nav = () => {
                                 </li>
                             </ul>
                             :
+                            // Si no esta logueado esto
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
                                     <NavLink className="nav-link" aria-current="page" to="/" exact activeClassName="active" >Login</NavLink >
