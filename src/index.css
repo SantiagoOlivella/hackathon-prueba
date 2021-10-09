@@ -10,6 +10,10 @@ body{
     background-color: rgb(255, 222, 255) !important;  
 }
 
+#divSpiner{
+    background-color: black;
+}
+
 #accordionHome{
     color: rgb(4, 0, 255);
 }
@@ -29,4 +33,19 @@ body{
 
 #cardLogin{
     background-color: black;
+}
+
+#containerTituloRecetas{
+    background-color: pink;
+}
+
+#inputRecetas{
+    background-color: lightgrey;
+}
+#titleCard{
+    background-color: lightgreen;
+}
+
+#titleReceta{
+    background-color: rgb(255, 222, 255) ;
 }

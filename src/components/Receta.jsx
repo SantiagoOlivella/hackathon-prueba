@@ -32,19 +32,99 @@ export const Receta = () => {
             {
                 Loading ? <ShowLoading /> :
 
-                    <div className="row">
+                    <div id="containerTituloRecetas">
                         {description !== null ?
                             description.map((item, i) => (
-                                <div className="col-md-4" key={i}>
-                                    <img src={item.strMealThumb} alt="imgReceta" />
-                                    <h1>{item.idMeal}</h1>
+                                <div className="row" key={i}>
+                                    <div className="col-lg-4 card" id="titleCard" >
+                                        <div className="m-5 p-5 card-body">
+                                            <h1 className=" text-center m-3 p-3" id="titleReceta" >{item.strMeal}</h1>
+                                            <div className="card-header">
+                                                <img src={item?.strMealThumb} alt="img" className="card-img-top" />
+                                            </div>
+                                            <div className="card-footer text-center">
+                                                <button className="btn btn-primary btn-lg" onClick={back} >volver</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-8 container" >
+                                        <div className="m-5 p-5 card-header">
+                                            <h1 className="text-center" id="titleCard" >Instrucciones</h1>
+                                            <h5 className=" text-center m-3 p-3" >{item.strInstructions}</h5>
+                                            <h1 className="text-center" id="titleCard" >Mira nuestro video con las instrucciones</h1>
+                                            <a href={item.strYoutube} className="text-decoration-none" > <h3 className="text-center" >Click Aquí <i className="fas fa-eye"></i><i className="far fa-eye"></i> </h3> </a>
+                                            <div className="card-body">
+                                                <img src="/img/instruccionesReceta.jpg" alt="img" className="card-img-top" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+
                             )) :
-                            <div>
-                                <h1>Acá van recetas manuales</h1>
+                            <div className="container m-5 p-5" >
+                                <h1 className="text-center m-5 p-3" id="titleCard">Para esta semana te tenemos los siguientes recomendados</h1>
+                                <div className="row">
+                                    <div className="col">
+                                        <div className="card">
+                                            <h1 className="text-center p-2" id="titleCard">Pizza hot</h1>
+                                            <img src="/img/recomendado1.jpg" className="card-img-top" alt="img" />
+                                            <div className="card-body">
+                                                <h5 className="card-title text-center" id="titleReceta">Instrucciones</h5>
+                                                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit alias facere aut rerum, quo dolores ipsa iste repellendus eos voluptatum..</p>
+                                                <h5 className="card-title text-center" id="titleReceta">Ingredientes</h5>
+                                                <ol className="list-group list-group-numbered">
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                </ol>
+                                                <div className="card-footer text-center">
+                                                    <button className="btn btn-primary btn-lg" onClick={back} >volver</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card">
+                                        <h1 className="text-center p-2" id="titleCard">Peperoni hot</h1>
+                                            <img src="/img/recomendado2.jpg" className="card-img-top" alt="img" />
+                                            <div className="card-body">
+                                                <h5 className="card-title text-center" id="titleReceta">Instrucciones</h5>
+                                                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit alias facere aut rerum, quo dolores ipsa iste repellendus eos voluptatum..</p>
+                                                <h5 className="card-title text-center" id="titleReceta">Ingredientes</h5>
+                                                <ol className="list-group list-group-numbered">
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                </ol>
+                                                <div className="card-footer text-center">
+                                                    <button className="btn btn-primary btn-lg" onClick={back} >volver</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card">
+                                        <h1 className="text-center p-2" id="titleCard">Taconishi</h1>
+                                            <img src="/img/recomendado3.jpg" className="card-img-top" alt="img" />
+                                            <div className="card-body">
+                                                <h5 className="card-title text-center" id="titleReceta">Instrucciones</h5>
+                                                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit alias facere aut rerum, quo dolores ipsa iste repellendus eos voluptatum..</p>
+                                                <h5 className="card-title text-center" id="titleReceta">Ingredientes</h5>
+                                                <ol className="list-group list-group-numbered">
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                    <li className="list-group-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, culpa.</li>
+                                                </ol>
+                                                <div className="card-footer text-center">
+                                                    <button className="btn btn-primary btn-lg" onClick={back} >volver</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         }
-                        <button className="btn btn-primary" onClick={back} >volver</button>
                     </div>
             }
 
